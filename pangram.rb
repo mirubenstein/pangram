@@ -1,10 +1,16 @@
 require 'set'
 
-class Pangram
-  ALPHABET = %w[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z].freeze
+module Italian
+  ALPHABET = %w[A B C D E F G H I L M N O P Q R S T U V Z].freeze
+end
 
-  def self.pangram?(phrase)
-    Set.new(ALPHABET).subset? phrase.upcase.chars.to_set
+module Latin
+  ALPHABET = %w[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z].freeze
+end
+
+class Pangram
+  def self.pangram?(phrase, language = Latin)
+    Set.new(language::ALPHABET).subset? phrase.upcase.chars.to_set
   end
 end
 
