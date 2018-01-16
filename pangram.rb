@@ -18,6 +18,9 @@ class Latin < Pangram
   end
 end
 
+Latin.new.pangram?('the quick brown fox jumps over the lazy dog')
+Italian.new.pangram?('Quel fez sghembo copre davanti')
+
 module BookKeeping
   VERSION = 6
 end
